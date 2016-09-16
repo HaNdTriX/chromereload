@@ -1,0 +1,36 @@
+{
+  "name": "chromereload",
+  "version": "0.0.1",
+  "description": "Webextension endpoint for livereload.",
+  "main": "./chromereload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:lib && npm run build:devonly",
+    "build:lib": "babel src --presets babel-preset-es2015 --out-dir .",
+    "build:devonly": "babel src --presets babel-preset-es2015 --out-dir .",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaNdTriX/chromereload.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "webextension",
+    "chromereload",
+    "livereload",
+    "generator-chrome-extension-kickstart"
+  ],
+  "author": "Henrik Wenz <handtrix@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HaNdTriX/chromereload/issues"
+  },
+  "homepage": "https://github.com/HaNdTriX/chromereload#readme",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0"
+  }
+}
