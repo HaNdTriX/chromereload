@@ -1,14 +1,16 @@
 class ChromeReload {
   constructor(args = {}) {
     const {
-      host,
-      port,
-      reconnectTime
+      host = 'localhost',
+      port = 35729,
+      reconnectTime = 3000,
+      debug = true
     } = args;
 
-    this.host = host || 'localhost';
-    this.port = port || 35729;
-    this.reconnectTime = reconnectTime || 3000;
+    this.host = host;
+    this.port = port;
+    this.reconnectTime = reconnectTime;
+    this.debug = debug;
 
     this.connect = this.connect.bind(this);
     this.onerror = this.onerror.bind(this);
@@ -97,7 +99,9 @@ class ChromeReload {
   }
 
   log(message, ...args) {
-    console.log(`%cChromeReload: ${message}`, 'color: gray;', ...args);
+    if(this.debug) {
+      console.log(`%cChromeReload: ${message}`, 'color: gray;', ...args);
+    }
   }
 }
 
