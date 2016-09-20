@@ -4,22 +4,34 @@ A small chrome extension endpoint for [livereload](https://www.npmjs.com/package
 
 ## Install
 
-    npm install --save-dev chromereload
+```bash
+npm install --save-dev chromereload
+```
+
+## Features
+
+* reconnect after livereload restart
+* reduce amout of reloads
+* supports reload of non chrome pages 
 
 ## Usage
 
 Include the module in your chrome extension context (backgroundscript/contentscript/etc.).
 
-    import ChromeReload from 'chromereload';
+```javascript
+import ChromeReload from 'chromereload';
 
-    new ChromeReload({
-      host: 'localhost'
-      port: 35729,
-      reconnectTime: 3000 /* ms */
-    });
+new ChromeReload({
+  host: 'localhost'
+  port: 35729,
+  reconnectTime: 3000 /* ms */
+});
+```
 
 For convenience you can also import the lib without configuring it:
 
-    import 'chromereload/devonly';
+```javascript
+import 'chromereload/devonly';
+```
 
 this only works if `process.env.NODE_ENV` is set to `development`.
