@@ -24,7 +24,8 @@ import ChromeReload from 'chromereload';
 new ChromeReload({
   host: 'localhost'
   port: 35729,
-  reconnectTime: 3000 /* ms */
+  reconnectTime: 3000 /* ms */,
+  debug: true
 });
 ```
 
